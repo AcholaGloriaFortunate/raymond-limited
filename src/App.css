@@ -1,4 +1,41 @@
+/* src/App.css */
+
 .App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 20vmin;
+  text-size-adjust: medium;
+  display: block;
+  pointer-events: none;
+  
+}
+
+.App-header {
+  background-image: url('./assets/dark.jpg'); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+  min-height: 30vh;
+  display: left;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(40px + 2vmin);
+  color: rgb(255, 255, 255);
+}
+
+.App-link {
+  color: #61dafb;
+} 
+
+
+
+
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +72,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

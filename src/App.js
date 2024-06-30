@@ -1,23 +1,14 @@
-// src/App.js
 import React from 'react';
 import './App.css';
 import Menu from './components/Menu';
 
-
 import logo from './assets/loogoo.png';
 
 function App() {
-  
-
-  
-
   return (
     <div className="App">
       <header className="App-header">
-         <img src={logo} className="App-logo" alt="logo" /> 
-
-        
-        
+        <img src={logo} className="App-logo" alt="logo" />
         <p>
           {/* Edit <code>src/App.js</code> and save to reload. */}
         </p>
@@ -31,13 +22,6 @@ function App() {
         </a>
       </header>
       <Menu />
-     
-      {/* <Home/> */}
-      {/* <About/>
-      <Contact/>
-      <Services/>
-      <Footer/>
-      <navbar/> */}
     </div>
   );
 }

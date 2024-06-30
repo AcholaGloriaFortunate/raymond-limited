@@ -1,36 +1,25 @@
-/* src/Menu.css */
+.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333; /* Dark background color */
+  text-align: center; /* Center align items */
+  border-radius: 8px;
+}
 
-nav {
-    background-color:rgb(97, 219, 128);
-  }
-  
-  .menu {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-  }
-  
-  .menu li {
-    float: left;
-  }
-  
-  .menu li a {
-    display: block;
-    color: rgba(7, 7, 7, 0.938);
-    text-align: center;
-    padding: 30px 30px;
-    text-decoration: none;
-  }
-  
-  .menu li a:hover {
-    background-color: rgb(236, 238, 237);
-  }
-  
-  .container {
-    margin: 20px;
-    padding: 20px;
-    background-color: #dedde6;
-    border: 3px solid #7c5dc4dc;
-  }
-  
+.menu li {
+  display: inline-block;
+}
+
+.menu li a {
+  display: block;
+  color: #ffffff; /* White text color */
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.menu li a:hover {
+  background-color: #111111; /* Darker background color on hover */
+}

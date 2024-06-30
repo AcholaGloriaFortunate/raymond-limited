@@ -1,9 +1,8 @@
-//src/Product.js
-
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Product.css'; // Optional: For styling
 
-//Import your images
+// Import your images
 import productImage1 from '../assets/product1.jpg';
 import productImage2 from '../assets/product2.jpg';
 import productImage3 from '../assets/product3.jpg';
@@ -16,7 +15,7 @@ const products = [
     id: 1,
     name: 'Product 1',
     image: productImage1,
-    description: 'This is a description for materials for school uniforms,hospital beddings and uniforms.',
+    description: 'This is a description for materials for school uniforms, hospital beddings, and uniforms.',
     price: 'shs. 100,000 per roll',
   },
   {
@@ -37,7 +36,7 @@ const products = [
     id: 4,
     name: 'Product 4',
     image: productImage4,
-    description: 'This is a description for table cloths.',
+    description: 'This is a description for tablecloths.',
     price: 'shs. 20,000 each',
   },
   {
@@ -65,6 +64,7 @@ const Product = () => {
           <h2>{product.name}</h2>
           <p>{product.description}</p>
           <p className="product-price">{product.price}</p>
+          <Link to={`/order/${product.id}`} className="order-button">Order Now</Link> {/* Link to order page with product ID */}
         </div>
       ))}
     </div>
@@ -72,3 +72,6 @@ const Product = () => {
 };
 
 export default Product;
+
+
+

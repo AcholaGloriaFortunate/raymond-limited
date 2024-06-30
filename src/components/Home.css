@@ -1,0 +1,41 @@
+.home-container {
+    text-align: center;
+    padding: 40px;
+    background-color: #f0f0f0; /* Light gray background */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; /* Centered container with margin */
+  }
+  
+  .home-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333333; /* Dark text color */
+  }
+  
+  .home-container p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #666666; /* Medium gray text color */
+  }
+  
+  .button-container {
+    margin-top: 20px;
+  }
+  
+  .button-container a {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 24px;
+    text-decoration: none;
+    color: #ffffff; /* White text color */
+    background-color: #007bff; /* Blue button */
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button-container a:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  

@@ -16,7 +16,7 @@ const Review = ({ productId }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/api/v1/reviews/create', {
+      const response = await axios.post('http://localhost:5000/api/v1/reviews/create', {
         ...formData,
         product_id: productId // Pass productId received as prop
       });
@@ -35,13 +35,15 @@ const Review = ({ productId }) => {
     <div className="review-container">
       <h2>Write a Review</h2>
       <form className="review-form" onSubmit={handleSubmit}>
-        <label htmlFor="rating">Rating:</label>
+        <label htmlFor="rating">Rating (1-5):</label>
         <input
           type="number"
           id="rating"
           name="rating"
           value={formData.rating}
           onChange={handleChange}
+          min="1"
+          max="5"
           required
         />
 
@@ -62,4 +64,5 @@ const Review = ({ productId }) => {
 };
 
 export default Review;
+
 

@@ -13,36 +13,31 @@ import About from './About'; // Import About component
 import Order from './Order';
 import './Order.css';
 
+import logo from '../assets/loogoo.png'; // Adjust the path as necessary
+
 const Menu = () => {
   return (
     <Router>
-      <nav>
-        <ul className="menu">
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/services">Services</a></li>
-          <li><a href="/product">Product</a></li>
-          <li><a href="/review">Reviews</a></li> {/* Add link to Review component */}
-        </ul>
-      </nav>
+      <div className="header-container">
+        <img src={logo} alt="Logo" className="logo" />
+        <nav>
+          <ul className="menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/product">Product</a></li>
+            <li><a href="/review">Reviews</a></li> {/* Add link to Review component */}
+          </ul>
+        </nav>
+      </div>
       <Routes>
         <Route path="/" element={<Home />} />
-
-        {/* Route to SignUpForm and LoginForm */}
         <Route path="/signup" element={<SignUpForm />} />
         <Route path="/login" element={<LoginForm />} />
-
-        {/* Route to Services and About components */}
         <Route path="/services" element={<Services />} />
         <Route path="/about" element={<About />} />
-
-        {/* Route to Product component */}
         <Route path="/product" element={<Product />} />
-
-        {/* Route to Order component without adding to navigation */}
         <Route path="/order/:productId" element={<Order />} />
-
-        {/* Route to Review component */}
         <Route path="/review" element={<Review />} />
       </Routes>
     </Router>
@@ -50,7 +45,4 @@ const Menu = () => {
 };
 
 export default Menu;
-
-
-
 

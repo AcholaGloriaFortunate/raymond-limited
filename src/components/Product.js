@@ -1,58 +1,102 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Product.css'; // Optional: For styling
+import './Product.css';
 
-// Import your images
-import productImage1 from '../assets/product1.jpg';
-import productImage2 from '../assets/product2.jpg';
-import productImage3 from '../assets/product3.jpg';
-import productImage4 from '../assets/product4.jpg';
-import productImage5 from '../assets/product5.jpg';
-import productImage6 from '../assets/product6.jpg';
+// Import product images
+import productImage1 from '../assets/cotton.jpg';
+import productImage2 from '../assets/chiffon.jpg';
+import productImage3 from '../assets/cotton towels.webp';
+import productImage4 from '../assets/silk.jpg';
+import productImage5 from '../assets/nylon.jpg';
+import productImage6 from '../assets/linen.jpg';
+import productImage7 from '../assets/chiffon.jpg';
+import productImage8 from '../assets/satin.webp';
+import productImage9 from '../assets/denim.webp';
+import productImage10 from '../assets/chiffon.jpg';
 
+
+// Define products array with image imports
 const products = [
   {
     id: 1,
-    name: 'Product 1',
+    name: 'Cotton',
     image: productImage1,
-    description: 'This is a description for materials for school uniforms, hospital beddings, and uniforms.',
-    price: 'shs. 100,000 per roll',
+    color: 'All colors',
+    price: 40000,
+    price_unit: 'per inch'
   },
   {
     id: 2,
-    name: 'Product 2',
+    name: 'Chiffon',
     image: productImage2,
-    description: 'These are threads and buttons used for tailoring.',
-    price: 'shs. 3,000 each',
+    color: 'All colors',
+    price: 35000,
+    price_unit: 'per inch'
   },
   {
     id: 3,
-    name: 'Product 3',
+    name: 'Cotton',
     image: productImage3,
-    description: 'This is a description for clothes.',
-    price: 'shs. 20,000 each',
+    color: 'All colors',
+    price: 30000,
+    price_unit: 'per inch'
   },
   {
     id: 4,
-    name: 'Product 4',
+    name: 'Silk',
     image: productImage4,
-    description: 'This is a description for tablecloths.',
-    price: 'shs. 20,000 each',
+    color: 'All colors',
+    price: 45000,
+    price_unit: 'per inch'
   },
   {
     id: 5,
-    name: 'Product 5',
+    name: 'Nylon',
     image: productImage5,
-    description: 'This is a description for checked materials.',
-    price: 'shs. 180,000 per roll',
+    color: 'All colors',
+    price: 40000,
+    price_unit: 'per inch'
   },
   {
     id: 6,
-    name: 'Product 6',
+    name: 'Linen',
     image: productImage6,
-    description: 'This is a description for polo-shirts.',
-    price: 'shs. 20,000 per roll',
+    color: 'All colors',
+    price: 40000,
+    price_unit: 'per inch'
   },
+  {
+    id: 7,
+    name: 'Chiffon',
+    image: productImage7,
+    color: 'All colors',
+    price: 26000,
+    price_unit: 'per inch'
+  },
+  {
+    id: 8,
+    name: 'Denim',
+    image: productImage8,
+    color: 'All colors',
+    price: 37000,
+    price_unit: 'per inch'
+  },
+  {
+    id: 9,
+    name: 'Satin',
+    image: productImage9,
+    color: 'All colors',
+    price: 60000,
+    price_unit: 'per inch'
+  },
+  {
+    id: 10,
+    name: 'Chiffon',
+    image: productImage10,
+    color: 'All colors',
+    price: 33000,
+    price_unit: 'per inch'
+  }
 ];
 
 const Product = () => {
@@ -61,10 +105,12 @@ const Product = () => {
       {products.map((product) => (
         <div key={product.id} className="product-card">
           <img src={product.image} alt={product.name} className="product-image" />
-          <h2>{product.name}</h2>
+          <h3>{product.name}</h3>
           <p>{product.description}</p>
           <p className="product-price">{product.price}</p>
-          <Link to={`/order/${product.id}`} className="order-button">Order Now</Link> {/* Link to order page with product ID */}
+          <Link to={`/order/${product.id}`} className="order-button">
+            Order Now
+          </Link>
         </div>
       ))}
     </div>
@@ -72,6 +118,12 @@ const Product = () => {
 };
 
 export default Product;
+
+
+
+
+
+
 
 
 

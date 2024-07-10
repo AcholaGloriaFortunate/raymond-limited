@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom'; // Import useNavigate
 import axios from 'axios';
 import './Order.css';
 
 const Order = () => {
   const { productId } = useParams(); // Get the productId from URL params
+  const navigate = useNavigate(); // Initialize useNavigate hook
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [order, setOrder] = useState({
     quantity: 1, // Default quantity
@@ -15,7 +16,7 @@ const Order = () => {
     // For demonstration purpose, assume selected product based on productId
     const product = {
       id: 1, // Replace with actual product fetching logic
-      name: 'Sample Product', // Replace with actual product name
+      name: 'Product', // Replace with actual product name
       price: 100000, // Replace with actual product price
     };
     setSelectedProduct(product); // Set the selected product state
@@ -25,15 +26,15 @@ const Order = () => {
     const { name, value } = e.target;
     setOrder((prevOrder) => ({
       ...prevOrder,
-      [name]: value,
+      [name]: parseInt(value), // Convert input value to integer
+      total_price: selectedProduct ? selectedProduct.price * parseInt(value) : 0, // Update total_price based on quantity change
     }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const token = localStorage.getItem('token'); // Fetch JWT token from localStorage
-
+      const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyMDYxMDU4OSwianRpIjoiZmY0NGMzYWQtNThhZi00Y2IwLTk5ZTctNWQ4MTY2YmUwYTViIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MiwibmJmIjoxNzIwNjEwNTg5LCJjc3JmIjoiYWY1MjY2MzAtN2UzMi00N2VhLWI3Y2MtYWY5ZjUxZjU2OTQ4IiwiZXhwIjoxNzIwNjExNDg5fQ.u9K7nRjqj7EMMtuc-hwRSItvnSd5EhdMEUWrOY4EyyQ";
       const response = await axios.post(
         'http://127.0.0.1:5000/api/v1/orders/create',
         {
@@ -55,6 +56,10 @@ const Order = () => {
         quantity: 1,
         total_price: 0,
       });
+
+      // Redirect to home page after successful order placement
+      navigate('/');
+
     } catch (error) {
       console.error('Error:', error.response ? error.response.data : error.message); // Handle error response
       alert('Failed to place order. Please try again.');
@@ -87,4 +92,5 @@ const Order = () => {
 };
 
 export default Order;
+
 

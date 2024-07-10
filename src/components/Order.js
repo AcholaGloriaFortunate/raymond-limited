@@ -70,7 +70,7 @@ const Order = () => {
 
   return (
     <div className="order-form-container">
-      <h2>Place Your Order for {selectedProduct.name}</h2>
+      <h2 style={{ color: 'lightseagreen' }}>Place Your Order for {selectedProduct.name}</h2>
       <p>Price: shs. {selectedProduct.price}</p>
       <form className="order-form" onSubmit={handleSubmit}>
         <div className="form-group">

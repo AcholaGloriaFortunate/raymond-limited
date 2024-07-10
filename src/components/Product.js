@@ -75,7 +75,7 @@ const products = [
   },
   {
     id: 8,
-    name: 'Denim',
+    name: 'Satin',
     image: productImage8,
     color: 'All colors',
     price: 37000,
@@ -83,7 +83,7 @@ const products = [
   },
   {
     id: 9,
-    name: 'Satin',
+    name: 'Denim',
     image: productImage9,
     color: 'All colors',
     price: 60000,

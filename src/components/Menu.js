@@ -1,64 +1,48 @@
-// src/Menu.js
-import React, { useState } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './Menu.css';
-import Services from './Services';
 import Home from './Home';
-import About from './About'
-import Contact from './Contact';
-import Product from './Products';
+import Product from './Product'; // Import the Product component
+import Review from './Review'; // Import the Review component
+import SignUpForm from './Auth'; // Assuming Auth.js contains SignUpForm
+import LoginForm from './Auth2'; // Assuming Auth2.js contains LoginForm
+import Services from './Services'; // Import Services component
+import About from './About'; // Import About component
+
+// Import Order component and its CSS
 import Order from './Order';
+import './Order.css';
+
+import logo from '../assets/loogoo.png'; // Adjust the path as necessary
 
 const Menu = () => {
-  const [activePage, setActivePage] = useState('Null');
-
   return (
-    <>
-      <nav>
-        <ul className="menu">
-          <li><a href="#home" onClick={() => setActivePage('Home')}>Home</a></li>
-          <li><a href="#about" onClick={() => setActivePage('About')}>About</a></li>
-          <li><a href="#contact" onClick={() => setActivePage('Contact')}>Contact Us</a></li>
-          <li><a href="#services" onClick={() => setActivePage('Services')}>Services</a></li>
-          <li><a href="#product" onClick={() => setActivePage('Product')}>Product</a></li>
-          <li><a href="#order" onClick={() => setActivePage('Order')}>Order</a></li>
-
-
-        </ul>
-      </nav>
-      {activePage === 'Home' && <Home />}
-      {activePage === 'About' && <About />}
-      {activePage === 'Contact' && <Contact />}
-      {activePage === 'Services' && <Services />}
-      {activePage === 'Product' && <Product />}
-      {activePage === 'Order' && <Order />}
-    </>
+    <Router>
+      <div className="header-container">
+        <img src={logo} alt="Logo" className="logo" />
+        <nav>
+          <ul className="menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/product">Product</a></li>
+            <li><a href="/review">Reviews</a></li> {/* Add link to Review component */}
+          </ul>
+        </nav>
+      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/signup" element={<SignUpForm />} />
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/product" element={<Product />} />
+        <Route path="/order/:productId" element={<Order />} />
+        <Route path="/review" element={<Review />} />
+      </Routes>
+    </Router>
   );
 };
 
-
-
-
-
-// const Contact = () => (
-//   <div className="container">
-//     <h1>Contact Us</h1>
-//       <p>Get in touch with us for more information on;</p>
-//       <p>Telephone: +256-783-648-245/ +256-785-765-436</p>
-//       <p>Email: ogwalronald@gmail.com</p>
-
-//       <h2>Social Media:</h2>
-//       <p>Instagram: @raymondinvestmentlimited</p>
-//       <p>Facebook: @raymondinvestmentlimited</p>
-//       <p>Twitter: @raymondinvestmentlimited</p>
-
-//       <h2>Office Hours:</h2>
-//       <p>Monday to Friday</p>
-//       <p>Time: 7:00am to 7:00pm</p>
-//       <p>Saturday to Sunday</p>
-//       <p>Time: 10:00am to 5:00pm</p>
-//     </div>
-// );
-
-
-
 export default Menu;
+

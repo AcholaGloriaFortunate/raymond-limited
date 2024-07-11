@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // src/components/Dashboard.js
 
 import React, { useEffect, useState } from 'react';
@@ -35,11 +36,21 @@ const Dashboard = ({ user }) => {
           <li key={post.id}>{post.message}</li>
         ))}
       </ul>
+=======
+import React from 'react';
+
+const Dashboard = () => {
+  return (
+    <div>
+      <h1>Dashboard</h1>
+      {/* Main dashboard content here */}
+>>>>>>> 4c51a7e7f76861c45169905c87cb10196eded8a8
     </div>
   );
 };
 
 export default Dashboard;
+<<<<<<< HEAD
 
 
 
@@ -61,3 +72,5 @@ export default Dashboard;
 // };
 
 //export default Dashboard;
+=======
+>>>>>>> 4c51a7e7f76861c45169905c87cb10196eded8a8

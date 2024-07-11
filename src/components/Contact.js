@@ -1,5 +1,6 @@
 import React from 'react';
-import ContactForm from './Contactform';
+import SocialMediaLinks from './SocialMediaLinks';
+//import ContactForm from './Contactform';
 const Contact = () => {
   return (
     <div className="container">
@@ -12,13 +13,15 @@ const Contact = () => {
       <p>Instagram: @raymondinvestmentlimited</p>
       <p>Facebook: @raymondinvestmentlimited</p>
       <p>Twitter: @raymondinvestmentlimited</p>
+      <p>linkedin:@raymondinvestmentlimited</p>
 
       <h2>Office Hours:</h2>
       <p>Monday to Friday</p>
       <p>Time: 7:00am to 7:00pm</p>
       <p>Saturday to Sunday</p>
       <p>Time: 10:00am to 5:00pm</p>
-      <ContactForm/>
+      {/* <ContactForm/> */}
+      <SocialMediaLinks/>
     </div>
   );
 };

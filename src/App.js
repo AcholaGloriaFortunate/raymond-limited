@@ -1,23 +1,40 @@
 // src/App.js
-import React from 'react';
+
+import React, { useState } from 'react';
 import './App.css';
 import Menu from './components/Menu';
-
-
 import logo from './assets/loogoo.png';
+import FacebookLoginButton from './components/FacebookLoginButton';
+import Dashboard from './components/Dashboard';
+
 
 function App() {
-  
+  const [user, setUser] = useState(null);
+  // Handle Facebook login response
+  const handleLogin = (userData) => {
+    // Check if the userData contains the necessary information
+    if (userData && userData.accessToken) {
+      setUser(userData);  // Update the user state with the response data
+    } else {
+      console.error('Failed to login');
+    }
+  };
 
-  
+
+  // const handleLogin = (userData) => {
+  //   setUser(userData);
+  // };
 
   return (
     <div className="App">
       <header className="App-header">
-         <img src={logo} className="App-logo" alt="logo" /> 
-
-        
-        
+        <img src={logo} className="App-logo" alt="logo" />
+        {/* <h1>Facebook Monitoring App</h1> */}
+        {!user ? (
+          <FacebookLoginButton onLogin={handleLogin} />
+        ) : (
+          <Dashboard user={user} />
+        )}
         <p>
           {/* Edit <code>src/App.js</code> and save to reload. */}
         </p>
@@ -31,18 +48,9 @@ function App() {
         </a>
       </header>
       <Menu />
-     
-      {/* <Home/> */}
-      {/* <About/>
-      <Contact/>
-      <Services/>
-      <Footer/>
-      <navbar/> */}
+      
     </div>
   );
 }
 
 export default App;
-
-
-
